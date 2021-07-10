@@ -1,0 +1,31 @@
+<div *ngIf="editForm; else view">
+  <div class="task-actions">
+    <fa-icon [icon]="faChevronLeft" class="icon" style="color: #254F72" (click)="editForm = !editForm"></fa-icon>
+  </div>
+  <app-task-form [type]="formType" [editTask]="task" [save]="editTask"></app-task-form>
+</div>
+<ng-template #view>
+  <div class="task-header">
+    <h2>Task - {{ task.title }}</h2>
+    <div class="task-actions">
+      <fa-icon [icon]="faEdit" class="icon" (click)="editForm = !editForm"></fa-icon>
+      <fa-icon [icon]="faTrash" class="icon" (click)="deletingTask(task.id)"></fa-icon>
+    </div>
+  </div>
+  <small>Priority - <span
+      [ngClass]="{'prio-color-high': task.prio == 'High', 'prio-color-med': task.prio == 'Medium', 'prio-color-low': task.prio == 'Low'}">{{
+      task.prio }}</span></small>
+
+  <div class="task-time">
+    {{ task.time }}
+  </div>
+
+  <p class="status" *ngIf="task.completed; else pending">
+    <span class="status-text status-completed" (click)=updatingStatus(task)>Completed</span>
+  </p>
+  <ng-template #pending>
+    <p class="status">
+      <span class="status-text status-pending" (click)=updatingStatus(task)>Pending</span>
+    </p>
+  </ng-template>
+</ng-template>

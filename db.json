@@ -1,0 +1,32 @@
+{
+  "Tasks": [
+    {
+      "id": 1,
+      "title": "Create Angular App",
+      "time": "45 Minutes",
+      "prio": "High",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Create Vue App",
+      "time": "1 Hours",
+      "prio": "Medium",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Update Angular App",
+      "time": "30 Minutes",
+      "prio": "Low",
+      "completed": false
+    },
+    {
+      "id": 6832542,
+      "title": "Testing Task",
+      "time": "20 Minutes",
+      "prio": "Medium",
+      "completed": false
+    }
+  ]
+}

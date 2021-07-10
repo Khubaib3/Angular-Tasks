@@ -1,0 +1,59 @@
+.task-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icon {
+  color: silver;
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.icon:hover {
+  color: #254F72;
+  left: .1em;
+  cursor: pointer;
+}
+
+
+.prio-color-high {
+  color: red;
+  font-weight: bold;
+}
+
+.prio-color-med {
+  color: #3eaf7c;
+  font-weight: bold;
+}
+
+.prio-color-low {
+  color: #254F72;
+  font-weight: bold;
+}
+
+.task-time {
+  margin-top: .5em;
+  font-size: 72px;
+}
+
+.status {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.status-pending {
+  background-color: #254F72;
+}
+
+.status-completed {
+  background-color: #3eaf7c;
+}
+
+.status-text {
+  padding: 10px 25px;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+}

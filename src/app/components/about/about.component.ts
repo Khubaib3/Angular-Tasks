@@ -9,6 +9,9 @@ export class AboutComponent implements OnInit {
 
   constructor() { }
 
+  msg: string = 'Najaf is Gay !!';
+  showMsg: boolean = false
+
   ngOnInit(): void {
   }
 

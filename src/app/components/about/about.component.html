@@ -1,1 +1,5 @@
-<p>about works!</p>
+<div class="flex-container">
+<h1>About</h1>
+<button class="btn btn-block" (click)="showMsg = !showMsg">Click Here to see About Section</button>
+<h2 *ngIf="showMsg">{{ msg }}</h2>
+</div>

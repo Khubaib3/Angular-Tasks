@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
+import { Task } from '../../task'
+import { TaskService } from '../../services/task.service'
 
 @Component({
   selector: 'app-tasks',
@@ -9,33 +12,28 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 })
 export class TasksComponent implements OnInit {
 
-  faEdit = faEdit;
-  faTrash = faTrash;
+  faChevronRight = faChevronRight;
 
-  tasks = [
-    {
-      title: 'Task 1',
-      prio: 'High',
-      time: '45 minutes',
-      completed: false
-    },
-    {
-      title: 'Task 2',
-      prio: 'Low',
-      time: '15 minutes',
-      completed: false
-    },
-    {
-      title: 'Task 3',
-      prio: 'Medium',
-      time: '30 minutes',
-      completed: false
-    }
-  ]
+  public addNewTask = Function()
 
-  constructor() { }
+  tasks: Task[] = []
+  newForm: boolean = false
+  formType: string = 'New'
+
+  constructor(private taskServer: TaskService, private router: Router) { }
 
   ngOnInit(): void {
+    this.taskServer.getTasks().subscribe(tasks => this.tasks = tasks)
+    this.addNewTask = this.addingNewTask.bind(this)
+  }
+
+  addingNewTask(task: Task) {
+    this.taskServer.addTask(task).subscribe(task => this.tasks.push(task))
+    this.newForm = !this.newForm
+  }
+
+  viewTask(id: any) {
+    return this.router.navigate([`/task/${id}`])
   }
 
 }
