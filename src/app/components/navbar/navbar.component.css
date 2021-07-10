@@ -1,0 +1,22 @@
+.nav-wrapper {
+  background-color: #3eaf7c;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+h1 {
+  color: white
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.router-link {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+}

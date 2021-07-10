@@ -1,0 +1,15 @@
+<h2>Tasks</h2>
+<hr />
+<div>
+  <ul class="tasks">
+    <li *ngFor="let task of tasks">
+      <span class="prio">{{ task.prio }}</span>
+      {{ task.title }}
+      <span class="time">{{ task.time }}</span>
+      <div class="Actions">
+        <fa-icon [icon]="faEdit" style="margin-right: 10px;"></fa-icon>
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </div>
+    </li>
+  </ul>
+</div>
